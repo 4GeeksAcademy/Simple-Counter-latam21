@@ -1,19 +1,20 @@
 import React from "react";
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
+	console.log(props)
 	return (
-		<div className="Container d-flex justify-content-evenly my-5">
+		<div className="Container d-flex justify-content-evenly my-5 bg-dark">
 			<div className="calendar">
-				<i class="far fa-clock"></i>
+				<i className="far fa-clock text-white"></i>
 			</div>
-			<div className="four">0</div>
-			<div className="three">0</div>
-			<div className="two">0</div>
-			<div className="one">0</div>
+			<div className="four text-white">{props.four % 10}</div>
+			<div className="three text-white">{props.three % 10}</div>
+			<div className="two text-white">{props.two % 10}</div>
+			<div className="one text-white">{props.one % 10}</div>
 		</div>
 	);
 };
